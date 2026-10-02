@@ -1,11 +1,11 @@
-# Rebuilds files/CV_Tomassini.pdf every time cv/index.html (or the photo) changes.
+# Rebuilds files/cv/CV_Tomassini.pdf every time files/cv/index.html (or the photo) changes.
 name: Build CV PDF
 
 on:
   push:
     branches: [main]
     paths:
-      - "cv/**"
+      - "files/cv/**"
       - "assets/img/photo.png"
   workflow_dispatch: # allows a manual run from the "Actions" tab
 
@@ -26,13 +26,13 @@ jobs:
 
       - name: Render PDF
         run: |
-          mkdir -p files
-          weasyprint cv/index.html files/CV_Tomassini.pdf
+          mkdir -p files/cv
+          weasyprint files/cv/index.html files/cv/CV_Tomassini.pdf
 
       - name: Commit the PDF
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add files/CV_Tomassini.pdf
+          git add files/cv/CV_Tomassini.pdf
           git diff --cached --quiet || git commit -m "Rebuild CV PDF"
           git push
