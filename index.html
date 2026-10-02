@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gabriel Tomassini – Astrophysicist</title>
+  <meta name="description" content="Gabriel Tomassini, astrophysicist working on evolved stars, circumstellar dust and 3D radiation-hydrodynamics simulations.">
+
+  <link rel="icon" href="assets/img/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="wrap">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#software">Software</a>
+      <a href="#publications">Publications</a>
+      <a href="#cv">CV</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="hero">
+      <img class="hero__photo" src="assets/img/photo.jpeg" alt="Gabriel Tomassini">
+      <div>
+        <h1>Gabriel Tomassini</h1>
+        <p class="hero__role">PhD Student · Observatoire de la Côte d'Azur, Nice, France</p>
+        <div class="pill-links">
+          <a href="mailto:gabriel.tomassini@oca.eu">Email</a>
+          <a href="https://scixplorer.org/search?p=1&q=orcid%3A0009-0003-6995-1840&sort=date+desc&d=astrophysics">NASA/ADS</a>
+          <a href="https://orcid.org/0009-0003-6995-1840">ORCID</a>
+          <a href="https://github.com/gtomass">GitHub</a>
+          <a href="files/cv/CV_Tomassini.pdf">CV (PDF)</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am an astrophysicist studying binaries in their late stages of stellar evolution, with a focus on
+        asymptotic giant branch (AGB) and post-AGB stars and their dusty circumstellar environments.
+        I combine high-angular-resolution observations, radiative transfer modelling and
+        3D radiation-hydrodynamics simulations to understand how evolved stars lose mass,
+        form dust, and how companions shape their atmospheres and outflows.
+      </p>
+      <p>
+        I am currently pursuing my PhD at Observvatoire de la Côte d'Azur in Nice, France under the supervision of Eric Lagadec and Andrea Chiavassa.
+  
+      </p>
+    </section>
+
+    <!-- ===================== RESEARCH ===================== -->
+    <section id="research">
+      <h2>Research</h2>
+      <div class="card-grid">
+
+        <article class="card">
+          <div class="card__tag">Modelling</div>
+          <h3>Dusty circumstellar environments and SED modelling</h3>
+          <p>
+            The spectral energy distributions of dusty evolved stars carry the imprint of their
+            mass-loss history. I developed a fitting code coupling SED fitting with 1D radiative
+            transfer to constrain the dust distribution and properties around these stars.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card__tag">Observations</div>
+          <h3>High-angular-resolution imaging with SPHERE/VLT</h3>
+          <p>
+            Using SPHERE on ESO's Very Large Telescope, I resolved the circumstellar environment
+            of AFGL&nbsp;4106 in unprecedented detail, leading to a reclassification of the system
+            [from … to …]. The images were featured as ESO Picture of the Week.
+          </p>
+          <figure>
+            <img src="assets/img/potw2608a.jpg" alt="SPHERE/VLT image of AFGL 4106">
+            <figcaption>
+              AFGL&nbsp;4106 seen by SPHERE/VLT. Credit: ESO/G. Tomassini et al. —
+              <a href="https://www.eso.org/public/images/potw2608a/">ESO Picture of the Week potw2608</a>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="card">
+          <div class="card__tag">Simulations</div>
+          <h3>3D radiation-hydrodynamics of AGB stars with companions</h3>
+          <p>
+            With the 3D radiation-hydrodynamics code CO5BOLD, I study how a close companion
+            affects the convective atmosphere of an AGB star. I extended the code to include a
+            companion in the gravitational potential, and restored and optimised its vectorisation,
+            achieving a fivefold speed-up that benefits all CO5BOLD users.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================== SOFTWARE ===================== -->
+    <section id="software">
+      <h2>Software</h2>
+      <article class="card">
+        <h3><a href="https://github.com/gtomass/DustyPY">DustyPY</a></h3>
+        <p>
+          A public tool to fit spectral energy distributions of dusty stars with 1D radiative
+          transfer models and MCMC fitting methods. This tool is develloped in Python and is available on GitHub.
+        </p>
+      </article>
+    </section>
+
+    <!-- ===================== PUBLICATIONS ===================== -->
+    <section id="publications">
+      <h2>Selected publications</h2>
+      <ol class="pubs">
+        <li>
+          <span class="pubs__title">Characterising the post-red supergiant binary system AFGL 4106 and its complex nebula with SPHERE/VLT</span><br>
+          <span class="pubs__meta"><span class="me">Tomassini, G., Lagadec, E., El Mellah, I., et al. — Astronomy and Astrophysics, 706, A5, EDP. (2026) · <a href="https://scixplorer.org/abs/2026A%26A...706A...5T/abstract">ADS</a></span>
+        </li>
+        <li>
+          <span class="pubs__title"></span>AGB Atmospheres in Binary Environments: A First Step with CO5BOLD<br>
+          <span class="pubs__meta"><span class="me">Tomassini, G.; Chiavassa, A., Freytag, B., Lagadec, E. — to be submitted to A&A (2026) · <a href="https://cloud.oca.eu/index.php/s/BTMWxCPeeLRzdiy">ADS</a></span>
+        </li>
+        <li>
+          <span class="pubs__title">White Dwarf Natal Kicks as Velocity-Space Random Walks. I. Fokker-Planck Theory</span><br>
+          <span class="pubs__meta"><span class="me">Majeski, S., Pham, D., Ryu, T., Tomassini, G., & Chiavassa, A.  — MNRAS (2026) · <a href="https://scixplorer.org/abs/2026arXiv260920940M/abstract">ADS</a></span>
+        </li>
+        <li>
+          <span class="pubs__title">White Dwarf Natal Kicks as Velocity-Space Random Walks. II. Binary Stellar Evolution and Observational Kick Constraints.</span><br>
+          <span class="pubs__meta"><span class="me">Pham, D., Majeski, S., Ryu, T., Tomassini, G., & Chiavassa, A.  — MNRAS (2026) · <a href="https://scixplorer.org/abs/2026arXiv260920941P/abstract">ADS</a></span>
+        </li>
+      </ol>
+      <p class="note">Full list on <a href="https://scixplorer.org/search?p=1&q=orcid%3A0009-0003-6995-1840&sort=date+desc&d=astrophysics">NASA/ADS</a>.</p>
+    </section>
+
+    <!-- ===================== CV ===================== -->
+    <section id="cv">
+      <h2>Career</h2>
+        <li><span class="timeline__when">[2024–now]</span><span> PhD in Astrophysics, Observatoire de la Côte d'Azur — <em>Impact of binarity on the late stages of stellar evolution</em></span></li>
+        <li><span class="timeline__when">[2022–2024]</span><span> Master's degree in fundamental physics option Astrophysics, Université Paris Saclay</span></li>
+      </ul>
+      <p class="note"><a href="files/cv/">View full CV</a> · <a href="files/CV_Tomassini.pdf">Download PDF</a></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© 2026 Gabriel Tomassini</div>
+  </footer>
+
+</body>
+</html>

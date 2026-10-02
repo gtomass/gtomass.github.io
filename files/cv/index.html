@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gabriel Tomassini – CV</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 9.3pt;
+    line-height: 1.42;
+    color: #222;
+  }
+  .page {
+    width: 210mm; height: 297mm;
+    display: grid;
+    grid-template-columns: 64mm 1fr;
+    grid-template-rows: 36mm 1fr;
+  }
+
+  /* Header */
+  .head-left, .head-right { background: #4a4a4a; color: #fff; }
+  .head-left { display: flex; align-items: center; justify-content: center; }
+  .head-left img { width: 23mm; height: 29.5mm; object-fit: cover; }
+  .head-right { padding: 11mm 0 0 2mm; }
+  .head-right h1 { margin: 0; font-size: 25pt; font-weight: 700; letter-spacing: -.3pt; line-height: 1.1; }
+  .head-right .subtitle { margin-top: 1.5mm; font-size: 9pt; font-weight: 700; letter-spacing: .8pt; text-transform: uppercase; }
+
+  /* Sidebar */
+  .side { background: #cbd5de; padding: 7mm 6mm 6mm 8mm; }
+  .side h2 {
+    font-size: 10pt; font-weight: 700; margin: 0 0 2.2mm;
+    padding-bottom: 1mm; border-bottom: 1.2pt solid #4a4a4a;
+  }
+  .side section + section { margin-top: 6mm; }
+  .side ul { list-style: none; margin: 0; padding: 0; }
+  .side li { margin-bottom: 1.4mm; }
+  .side .lang b { display: block; }
+  .side .lang span { color: #555; }
+  .side .label { font-weight: 600; display: block; }
+  .side .contact li { word-break: break-word; }
+
+  /* Main */
+  .main { padding: 6mm 9mm 6mm 8mm; }
+  .profile { margin: 0 0 4mm; font-style: italic; color: #333; }
+  .main h2 {
+    font-size: 10pt; font-weight: 700; letter-spacing: .6pt; text-transform: uppercase;
+    margin: 0 0 2mm; padding-bottom: 1mm; border-bottom: 1.2pt solid #4a4a4a;
+  }
+  .main section + section { margin-top: 4.6mm; }
+  .entry { margin-bottom: 3mm; }
+  .entry:last-child { margin-bottom: 0; }
+  .row { display: flex; justify-content: space-between; gap: 3mm; }
+  .title { font-weight: 700; }
+  .date { color: #555; white-space: nowrap; font-size: 8.6pt; }
+  .where { color: #444; }
+  .note { color: #555; font-size: 8.6pt; }
+  .entry ul { margin: .8mm 0 0; padding-left: 3.6mm; }
+  .entry li { margin-bottom: .4mm; }
+  @media screen {
+  html { background: #e9ecef; }
+  body { padding: 70px 0 40px; }
+  .page { margin: 0 auto; background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,.15); }
+  .toolbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+    display: flex; justify-content: center; gap: 10px; padding: 14px;
+    background: rgba(233,236,239,.92); backdrop-filter: blur(6px);
+    font-size: 14px;
+  }
+  .toolbar a {
+    padding: 7px 16px; border-radius: 999px; text-decoration: none; font-weight: 600;
+    color: #4a4a4a; border: 1px solid #4a4a4a;
+  }
+  .toolbar a.primary { background: #4a4a4a; color: #fff; }
+}
+@media screen and (max-width: 820px) {
+  body { padding-top: 64px; }
+  .page { zoom: calc(100vw / 210mm); }
+}
+@media print { .toolbar { display: none; } }
+</style>
+</head>
+<body>
+<nav class="toolbar">
+  <a href="../../">← Website</a>
+  <a class="primary" href="CV_Tomassini.pdf" download>Download PDF</a>
+</nav>
+<div class="page">
+
+  <div class="head-left"><img src="../../assets/img/photo.jpeg" alt=""></div>
+  <div class="head-right">
+    <h1>Gabriel Tomassini</h1>
+    <div class="subtitle">PhD Students in Astrophysics</div>
+  </div>
+
+  <aside class="side">
+    <section>
+      <h2>Contact</h2>
+      <ul class="contact">
+        <li>Observatoire de la Côte d'Azur<br>Nice, France</li>
+        <li>gabriel.tomassini@oca.eu</li>
+        <li>+33 (0)6 17 30 97 15</li>
+        <li>Nationality: French</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <ul>
+        <li><span class="label">Observations</span>SPHERE/VLT imaging, MATISSE/VLTI interferometry: data reduction &amp; analysis</li>
+        <li><span class="label">Modelling</span>Radiative transfer, SED fitting, 3D radiation-hydrodynamics (CO5BOLD)</li>
+        <li><span class="label">Programming</span>Python, Fortran, C++, HPC code optimisation, LaTeX</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <ul class="lang">
+        <li><b>French</b><span>Native</span></li>
+        <li><b>English</b><span>Advanced (C1)</span></li>
+        <li><b>Spanish</b><span>Intermediate (B2)</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Interests</h2>
+      <ul>
+        <li>Astronomy, computer science</li>
+        <li>Sports (triathlon, motorsport)</li>
+      </ul>
+    </section>
+  </aside>
+
+  <main class="main">
+    <p class="profile">Astrophysicist working on binaries of evolved stars, combining observations, radiative transfer and 3D radiation-hydrodynamics simulations to understand stellar mass loss and the role of companions in the late stages of stellar evolution.</p>
+
+    <section>
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="row"><span class="title">PhD in Astrophysics</span><span class="date">Oct 2024 – present</span></div>
+        <div class="where">Observatoire de la Côte d'Azur, Université Côte d'Azur, Nice, France</div>
+        <ul>
+          <li>Developed a public SED-fitting code based on 1D radiative transfer for dusty evolved stars</li>
+          <li>Extended the 3D RHD code CO5BOLD to include a companion; restored its vectorisation (×5 speed-up)</li>
+          <li>SPHERE/VLT images of AFGL&nbsp;4106 featured as ESO Picture of the Week (potw2608)</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="row"><span class="title">MSc in Astronomy &amp; Astrophysics (Master 2)</span><span class="date">Sep 2023 – Jul 2024</span></div>
+        <div class="where">Observatoire de Paris – PSL University, Paris, France — with honours</div>
+      </div>
+      <div class="entry">
+        <div class="row"><span class="title">Magistère de Physique Fondamentale (BSc + MSc level)</span><span class="date">Sep 2021 – Jul 2024</span></div>
+        <div class="where">Université Paris-Saclay, Orsay, France — with honours</div>
+        <div class="note">Selective three-year honours programme in fundamental physics</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Research experience</h2>
+      <div class="entry">
+        <div class="row"><span class="title">Research Internship (MSc thesis)</span><span class="date">Mar 2024 – Jul 2024</span></div>
+        <div class="where">Observatoire de la Côte d'Azur, Nice — Supervisor: Eric Lagadec</div>
+        <ul>
+          <li>Analysis of SPHERE/VLT imaging and MATISSE/VLTI interferometric data of the post-AGB binary candidate AFGL&nbsp;4106</li>
+          <li>Comparison with state-of-the-art models of binary interaction</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="row"><span class="title">Research Internship</span><span class="date">May 2023 – Aug 2023</span></div>
+        <div class="where">Observatoire de la Côte d'Azur, Nice — Supervisor: Eric Lagadec</div>
+        <ul>
+          <li>Analysis of SPHERE/VLT observations of AFGL&nbsp;4106 and comparison with binary-interaction models</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="row"><span class="title">Research Internship</span><span class="date">May 2022 – Jul 2022</span></div>
+        <div class="where">Institut d'Astrophysique de Paris, Paris — Supervisor: Robert Mochkovitch</div>
+        <ul>
+          <li>Simulations of high-energy phenomena associated with binary neutron star mergers</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Teaching</h2>
+      <div class="entry">
+        <div class="row"><span class="title">Teaching Assistant in Mathematics and Physics</span><span class="date">Sep 2025 – present</span></div>
+        <div class="where">Université Côte d'Azur, Nice, France</div>
+        <ul>
+          <li>Tutorial classes for first-year undergraduate students (58 hours per year)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Outreach</h2>
+      <div class="entry">
+        <div class="row"><span class="title">Science Communicator (part-time, alongside PhD)</span><span class="date">Nov 2024 – Jul 2025</span></div>
+        <div class="where">Observatoire de la Côte d'Azur, Nice, France</div>
+        <ul>
+          <li>EduCosmos project: designed hands-on astronomy workshops</li>
+          <li>Public science events (Fête de la Science, Festival des Sciences Océans, …)</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+</div>
+</body>
+</html>
