@@ -1,0 +1,38 @@
+# Rebuilds files/CV_Tomassini.pdf every time cv/index.html (or the photo) changes.
+name: Build CV PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "cv/**"
+      - "assets/img/photo.png"
+  workflow_dispatch: # allows a manual run from the "Actions" tab
+
+permissions:
+  contents: write
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install WeasyPrint and fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-inter
+          pip install weasyprint
+
+      - name: Render PDF
+        run: |
+          mkdir -p files
+          weasyprint cv/index.html files/CV_Tomassini.pdf
+
+      - name: Commit the PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add files/CV_Tomassini.pdf
+          git diff --cached --quiet || git commit -m "Rebuild CV PDF"
+          git push
