@@ -1,54 +1,77 @@
-# Gabriel Tomassini – academic website
+# gtomass.github.io
 
-Personal website hosted on GitHub Pages.
+Personal academic website of Gabriel Tomassini, hosted on GitHub Pages.
+
+> **Status:** the repository is currently **private**, so the site is not online yet.
+> See [Going public](#going-public) when ready.
 
 ## Structure
 
 ```
 .
-├── index.html              # page content
-├── .nojekyll               # tells GitHub Pages to serve files as-is
+├── index.html              # homepage content
+├── cv/
+│   └── index.html          # the CV (source of the PDF) – edit this one
 ├── assets/
-│   ├── css/
-│   │   └── style.css       # all styling (colours, fonts, layout)
-│   └── img/
-│       ├── photo.jpg       # profile photo (square, ~400×400 px)
-│       ├── afgl4106.jpg    # SPHERE image (ESO potw2608)
-│       └── favicon.png     # optional browser-tab icon
-└── files/
-    └── CV_Tomassini.pdf    # full CV
+│   ├── css/style.css       # homepage styling (colours/fonts as variables at the top)
+│   └── img/                # photo, figures, favicon
+├── files/
+│   └── CV_Tomassini.pdf    # generated automatically – never edit by hand
+├── .github/workflows/
+│   └── build-cv.yml        # rebuilds the CV PDF on every CV change
+├── .nojekyll               # tells GitHub Pages to serve files as-is
+└── .gitignore
 ```
 
-## Files to add
+## Everyday workflow
 
-| File | Where |
-|------|-------|
-| Profile photo | `assets/img/photo.jpg` |
-| AFGL 4106 image (from the ESO potw page, keep the credit) | `assets/img/afgl4106.jpg` |
-| CV | `files/CV_Tomassini.pdf` |
-| Favicon (optional) | `assets/img/favicon.png` |
+Always start by pulling: the GitHub Action adds its own commit (the PDF), so a push
+without a pull first will be rejected.
 
-Then fill in every `[...]` placeholder in `index.html`.
+```bash
+cd ~/Documents/Git_Repo/Webpage
+git pull                     # 1. get the latest version (incl. the rebuilt PDF)
+# ... edit files ...
+git add .
+git commit -m "Describe the change"
+git push                     # 2. send it to GitHub
+```
 
-## Deploy on GitHub Pages
+## Updating the CV
 
-1. Create a public repository named `<username>.github.io`.
-2. Push the contents of this folder to the `main` branch:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial website"
-   git branch -M main
-   git remote add origin https://github.com/<username>/<username>.github.io.git
-   git push -u origin main
-   ```
-3. In the repository, go to **Settings → Pages** and check the source is `main` / root.
-4. The site is live at `https://<username>.github.io` within a minute or two.
+1. Edit `cv/index.html`.
+2. Commit and push.
+3. The **Build CV PDF** action (tab **Actions** on GitHub) regenerates
+   `files/CV_Tomassini.pdf` in about a minute.
+4. `git pull` to get the new PDF locally.
 
-## Updating
+The PDF must stay on **one page**: after a change, open the CV page locally and check
+File → Print preview.
 
-- **Text**: edit `index.html`.
-- **Look** (colours, fonts, spacing): edit the variables at the top of `assets/css/style.css`.
-- **CV**: replace `files/CV_Tomassini.pdf` with the new version (keep the same name so links don't break).
+## Preview locally
 
-Preview locally with `python3 -m http.server` in this folder, then open http://localhost:8000.
+```bash
+python3 -m http.server
+```
+
+Then open <http://localhost:8000> in a browser. The VS Code preview does not resolve
+folder links such as `cv/`, so use this (or the *Live Server* extension) instead.
+
+## Going public
+
+GitHub Pages only works on **public** repositories with a free account.
+
+1. Check that nothing confidential is in the repository (e.g. unpublished manuscripts):
+   it will be readable by anyone, including the git history.
+2. On GitHub: **Settings → General → Danger Zone → Change visibility → Public**.
+3. **Settings → Pages → Source:** branch `main`, folder `/ (root)`.
+4. The site is live at <https://gtomass.github.io> within a few minutes.
+
+## Troubleshooting
+
+| Problem | Fix |
+|---------|-----|
+| `git push` rejected (*fetch first* / *non-fast-forward*) | `git pull`, then push again |
+| `gh` asks to log in again / `mkdir ~/.config/gh: permission denied` | `sudo chown -R $(whoami) ~/.config`, then `gh auth login` |
+| The CV action fails at the push step | **Settings → Actions → General → Workflow permissions → Read and write permissions** |
+| A link to `cv/` does not open in VS Code preview | Normal – use `python3 -m http.server` |
